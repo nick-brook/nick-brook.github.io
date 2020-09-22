@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- test 2 branch -->
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Open graphic settings-->
+    <meta property="og:url" content="http://www.google.com/"/>
+    <meta property="og:type" content="text" />
+    <meta property="og:title" content="Cool Quotes" />
+    <meta property="og:description" content= "Cool Quotes" />
+
+<!-- laod sdk for javascript-->
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="randomquote.css">
+
+    <!--Import JS file-->
+    <script src="rq.js"></script>
+
+
+    <!-- load fonts awesome -->
+    <script src = "https://kit.fontawesome.com/a1be6c75b5.js" crossorigin = "anonymous"></script>
+
+     <!-- ensure proper rendering and touch zooming -->
+    <meta name = "viewport" content = "width=device-width, initial-scale=1" >
+
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!--favicon-->
+    <link rel='icon' href='bulb.png' type='image/x-icon' />
+
+    <title>Cool Quotes</title>
+
+    <style></style>
+</head>
+
+<!-- load new quote when window is opened -->
+<body onload = "myNewQuote ()">
+
+<!--! load FB SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="UTaOVMhf"></script>
+
+<!--highest level container-->
+<div class="container-fluid p-5 mt-3" id="quote-box">
+   
+    <!-- Div for quote text centered -->
+       <div class="row">
+
+        <div class="col-sm-2">
+        </div>
+
+        <div class="col-sm-8 text-center">
+ 
+        <!-- div for image-->
+            <div class="text-container pl-3 pr-3 pt-5" id="text-image">
+                                   
+                    <h4 class = "text-center" id = "text-holder">
+                        <i class="fas fa-quote-left"></i>
+                        <span id= "text"></span>
+                        <i class="fas fa-quote-right"></i>
+                    <h4>
+
+           <!-- Div for author centered aligned right -->   
+               <h6 class="mt-4 pr-4 text-right font-italic" id="author">
+               </h6>
+            </div>
+
+ <!-- Div for button --> 
+           <div>
+                <button class = "btn btn-info btn-block bg-primary" onclick = "myNewQuote()">New Quote</button>
+           </div>
+
+            <!-- Div for navbar for twitter facebox and tumblr posts -->
+            <div>
+                <ul class="nav justify-content-around mt-3">
+                    <li class="nav-item">
+                        <a  class="nav-link" id="tweet-quote" onclick = "postTwitter()" href ="#" title = "Tweet Quote!" target = "_blank">
+                            <i class="fab fa-twitter fa-lg" ></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <div class="fb-share-button" data-href="https://google.com/" data-layout="button" data-size="large">
+                            <a target="_blank" title = "Post to Facebook!" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgoogle.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " id="tumblr-quote " onclick = "postTumblr()" href="# "title = "Post to tumblr!" target = "_blank">
+                            <i class="fab fa-tumblr fa-lg "></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-sm-2">        
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
